@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <title>Pesan Makanan</title>
+    <title>Pesan Makan</title>
     <meta name="dicoding:email" content="hfis15@yahoo.co.id" />
     <meta name="description" content="Pesan makanan line submission dicoding" />
     <meta name="author" content="Hafiz Mandala Arummi" />
@@ -25,60 +25,27 @@
         <h1 align="center">Pesan Makan</h1>
       </div>
 
-      <div class="page-content">
-        <h4 align="center">
-          Hi <b>Customer!</b> Yuk jajan, jajan di RBrto food, drink. - bukan
-          pillihan :
-        </h4>
+      <div class="page-content" align="center">
+        <p>Pengen makan? Yuk beli disini!</p>
+
+        <p>Eh tapi ko belom login, login dulu yuk klik tombol dibawah ini</p>
       </div>
 
       <!--Konten LIFF v2-->
-
       <div id="liffAppContent" align="center">
-        <!-- ACTION BUTTONS -->
-        <div class="buttonGroup">
-          <div class="buttonRow">
-            <button id="openWindowButton" class="btn btn-success btn-small">
-              Open External Window
-            </button>
-            <button id="closeWindowButton" class="btn btn-danger btn-small">
-              Close LIFF App
-            </button>
-            <button id="sendMessageButton" class="btn btn-warning btn-small">
-              Send Message
-            </button>
-          </div>
-        </div>
-
-        <!-- LIFF DATA -->
-        <div id="liffData" align="center">
-          <h3 id="liffDataHeader" class="textLeft">Informasi:</h3>
-          <table>
-            <tr>
-              <th>isInClient :</th>
-              <td id="isInClient" class="textLeft"></td>
-            </tr>
-            <tr>
-              <th>isLoggedIn :</th>
-              <td id="isLoggedIn" class="textLeft"></td>
-            </tr>
-          </table>
-        </div>
         <!-- LOGIN LOGOUT BUTTONS -->
-        <div class="buttonGroup" align="center">
+        <div class="buttonGroup">
           <button id="liffLoginButton" class="btn btn-success btn-small">
             Log in
           </button>
-          <button id="liffLogoutButton" class="btn btn-warning btn-small">
-            Log out
-          </button>
         </div>
-        <div id="statusMessage" align="center">
+        <div id="statusMessage">
           <div id="isInClientMessage"></div>
         </div>
       </div>
+
       <!-- LIFF ID ERROR -->
-      <div id="liffIdErrorMessage" align="center" class="hidden">
+      <div id="liffIdErrorMessage" class="hidden">
         <p>You have not assigned any value for LIFF ID.</p>
         <p>
           If you are running the app using Node.js, please set the LIFF ID as an
@@ -109,7 +76,7 @@
         </p>
       </div>
       <!-- LIFF INIT ERROR -->
-      <div id="liffInitErrorMessage" align="center" class="hidden">
+      <div id="liffInitErrorMessage" class="hidden">
         <p>Something went wrong with LIFF initialization.</p>
         <p>
           LIFF initialization can fail if a user clicks "Cancel" on the "Grant
@@ -119,13 +86,12 @@
       </div>
 
       <!-- NODE.JS LIFF ID ERROR -->
-      <div id="nodeLiffIdErrorMessage" align="center" class="hidden">
+      <div id="nodeLiffIdErrorMessage" class="hidden">
         <p>Unable to receive the LIFF ID as an environment variable.</p>
       </div>
     </div>
   </body>
 
-  <script src="pesan-makan-config.js"></script>
-  <script src="liff-starter.js"></script>
+  <script src="liff-login.js"></script>
   <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
 </html>
