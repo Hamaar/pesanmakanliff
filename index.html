@@ -12,8 +12,28 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
     />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
     <link rel="stylesheet" href="style.css" />
   </head>
   <body onload="loadPesanMakan();">
@@ -25,47 +45,154 @@
         <h1 align="center">Pesan Makan</h1>
       </div>
 
-      <div class="page-content">
-        <h4 align="center">
-          Hi <b>Customer!</b> Yuk jajan, jajan di RBrto food, drink. - bukan
-          pillihan :
+      <div class="page-content" align="center">
+        <h4>
+          Halo <b id="userName"></b>
+          <img style="width: 40px" id="userProfile" />
         </h4>
+        <h5>Yuk pilih makanan dan minuman yang ingin dibeli</h5>
+        <br /><br />
+
+        <h2>Daftar Menu</h2>
+        <h3>Makanan</h3>
+        <div class="menu-makanan">
+          <div class="card makanan" style="width: 18rem">
+            <img
+              class="card-img-top"
+              src="./images/Resep-Nasi-Lengko.jpg"
+              alt="nasi_lengko"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Nasi Lengko</h5>
+              <p class="card-text">Rp. <span id="angkama1">10,000</span></p>
+              <input
+                class="form-control makanan"
+                type="number"
+                id="jmlNasiLengko"
+                min="0"
+                placeholder="Jumlah Nasi Lengko"
+              />
+              <button
+                class="btn btn-success"
+                onclick="add('Nasi Lengko', '#jmlNasiLengko', 10000)"
+              >
+                Tambah
+              </button>
+            </div>
+          </div>
+          <div class="card makanan" style="width: 18rem">
+            <img
+              class="card-img-top"
+              src="./images/buburindramayu.jpg"
+              alt="bubur"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Bubur Ayam</h5>
+              <p class="card-text">Rp. <span id="angkama2">8,000</span></p>
+              <input
+                class="form-control makanan"
+                type="number"
+                id="jmlBubur"
+                min="0"
+                placeholder="Jumlah Bubur Ayam"
+              />
+              <button
+                class="btn btn-success"
+                onclick="add('Bubur Ayam', '#jmlBubur', 8000)"
+              >
+                Tambah
+              </button>
+            </div>
+          </div>
+        </div>
+        <h3>Minuman</h3>
+        <div class="menu-minuman">
+          <div class="card makanan" style="width: 18rem">
+            <img
+              class="card-img-top"
+              src="./images/esteh.jpg"
+              alt="es_tehmanis"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Es Teh Manis</h5>
+              <p class="card-text">Rp. <span id="angkami1">3,000</span></p>
+              <input
+                class="form-control makanan"
+                type="number"
+                id="jmlEsTeh"
+                min="0"
+                placeholder="Jumlah Es Teh Manis"
+              />
+              <button
+                class="btn btn-success"
+                onclick="add('Es Teh Manis', '#jmlEsTeh', 3000)"
+              >
+                Tambah
+              </button>
+            </div>
+          </div>
+          <div class="card makanan" style="width: 18rem">
+            <img
+              class="card-img-top"
+              src="./images/esjeruk.jpeg"
+              alt="es_jeruk"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Es Jeruk</h5>
+              <p class="card-text">Rp. <span id="angkami2">5,000</span></p>
+
+              <input
+                class="form-control makanan"
+                type="number"
+                id="jmlEsJeruk"
+                min="0"
+                placeholder="Jumlah Es Jeruk"
+              />
+              <button
+                class="btn btn-success"
+                onclick="add('Es Jeruk', '#jmlEsJeruk', 5000)"
+              >
+                Tambah
+              </button>
+            </div>
+          </div>
+          <br /><br /><br />
+        </div>
       </div>
 
+      <div class="row d-flex align-items-start mt-2">
+        <hr />
+        <div class="col col-md-6 col-sm-6">
+          <h4>Ringkasan</h4>
+          <ul id="listPesanan" class="list-group"></ul>
+        </div>
+        <div class="col col-md-5 col-sm-5">
+          <h4>Total :</h4>
+          <input
+            class="form-control makanan"
+            type="number"
+            value="0"
+            id="total"
+            readonly
+          />
+          <button class="btn btn-success" id="sendMessageButton">
+            Pesan Sekarang
+          </button>
+          <button class="btn btn-danger" onclick="reset()">Reset</button>
+        </div>
+      </div>
       <!--Konten LIFF v2-->
 
       <div id="liffAppContent" align="center">
-        <!-- ACTION BUTTONS -->
-        <div class="buttonGroup">
-          <div class="buttonRow">
-            <button id="openWindowButton" class="btn btn-success btn-small">
-              Open External Window
-            </button>
-            <button id="closeWindowButton" class="btn btn-danger btn-small">
-              Close LIFF App
-            </button>
-            <button id="sendMessageButton" class="btn btn-warning btn-small">
-              Send Message
-            </button>
-          </div>
-        </div>
-
-        <!-- LIFF DATA -->
-        <div id="liffData" align="center">
-          <h3 id="liffDataHeader" class="textLeft">Informasi:</h3>
-          <table>
-            <tr>
-              <th>isInClient :</th>
-              <td id="isInClient" class="textLeft"></td>
-            </tr>
-            <tr>
-              <th>isLoggedIn :</th>
-              <td id="isLoggedIn" class="textLeft"></td>
-            </tr>
-          </table>
-        </div>
         <!-- LOGIN LOGOUT BUTTONS -->
         <div class="buttonGroup" align="center">
+          <button id="openWindowButton" class="btn btn-success btn-small">
+            Open External Window
+          </button>
+          <button id="closeWindowButton" class="btn btn-danger btn-small">
+            Close LIFF App
+          </button>
+
           <button id="liffLoginButton" class="btn btn-success btn-small">
             Log in
           </button>
