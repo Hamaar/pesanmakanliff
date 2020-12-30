@@ -70,6 +70,7 @@ function initializeLiff(myLiffId) {
  */
 function initializeApp() {
   registerButtonHandlers();
+  displayLiffData();
 
   // check if the user is logged in/out, and disable inappropriate button
   if (liff.isLoggedIn()) {
@@ -131,7 +132,7 @@ function registerButtonHandlers() {
       getPesanan();
       if (!liff.isInClient()) {
         alert(`
-                  Hai ${nama} !\nPesanan Kamu :\n${daftar}\nTotal Rp. ${totalHarga}\nSilakan pesan melalui aplikasi LINE`);
+                  Hai ${nama} !\nPesanan Kamu :\n${daftar}\nTotal Rp. ${totalHarga}\n\n\nSilakan pesan melalui aplikasi LINE`);
       } else {
         liff
           .sendMessages([
