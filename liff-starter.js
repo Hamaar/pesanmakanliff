@@ -81,7 +81,7 @@ function initializeApp() {
   }
 
   if (liff.isInClient()) {
-    document.getElementById("closeWindowButton").classList.add("hidden");
+    // document.getElementById("closeWindowButton").classList.add("hidden");
   } else {
     document.getElementById("closeWindowButton").classList.add("hidden");
     document.getElementById("openWindowButton").classList.add("hidden");
