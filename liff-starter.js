@@ -93,11 +93,14 @@ function displayIsInClientInfo() {
   if (liff.isInClient()) {
     document.getElementById("liffLoginButton").classList.toggle("hidden");
     document.getElementById("liffLogoutButton").classList.toggle("hidden");
+    document.getElementById("verExternal").classList.toggle("hidden");
     document.getElementById("isInClientMessage").textContent =
-      "You are opening the app in the in-app browser of LINE.";
+      "Dibuka lewat Browser LINE.";
   } else {
+    document.getElementById("verLine").classList.toggle("hidden");
+
     document.getElementById("isInClientMessage").textContent =
-      "You are opening the app in an external browser.";
+      "Dibuka lewat external browser.";
   }
 }
 
@@ -106,7 +109,7 @@ function registerButtonHandlers() {
     .getElementById("openWindowButton")
     .addEventListener("click", function () {
       liff.openWindow({
-        url: "https://example.herokuapp.com/", // Isi dengan Endpoint URL aplikasi web Anda
+        url: "https://pesanmakanan.netlify.app", // Isi dengan Endpoint URL aplikasi web Anda
         external: true,
       });
     });

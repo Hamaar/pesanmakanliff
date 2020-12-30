@@ -21,9 +21,14 @@
       class="col-xs-12 col-md-8 col-md-offset-2"
       ng-controller="listContactCtrl"
     >
-      <div class="page-header">
-        <h1 align="center">Catatan Harianku</h1>
+      <div class="page-header" id="verLine">
+        <h1 align="center">Catatan Harianku Mobile</h1>
       </div>
+
+      <div class="page-header" id="verExternal">
+        <h1 align="center">Catatan Harianku External Browser</h1>
+      </div>
+
       <!--Konten LIFF v2-->
 
       <div id="liffAppContent">
@@ -64,6 +69,9 @@
           <button id="liffLogoutButton" class="btn btn-warning btn-small">
             Log out
           </button>
+        </div>
+        <div id="statusMessage">
+          <div id="isInClientMessage"></div>
         </div>
       </div>
       <!-- LIFF ID ERROR -->
@@ -114,7 +122,7 @@
     </div>
   </body>
 
-  <script src="liff-starter.js"></script>
   <script src="pesan-makan-config.js"></script>
+  <script src="liff-starter.js"></script>
   <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
 </html>
